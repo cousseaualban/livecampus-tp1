@@ -1,0 +1,124 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  background-color: #31314a;
+  color: #cdcde4;
+}
+body header {
+  background-color: #1e1e2e;
+}
+body header nav {
+  width: 90%;
+  margin: auto;
+  display: flex;
+}
+body header nav img {
+  width: 30%;
+  margin: auto;
+}
+body header nav .links {
+  width: 40%;
+  margin: auto;
+}
+body header nav .links ul {
+  display: flex;
+  justify-content: space-between;
+}
+body header nav .links ul li {
+  list-style-type: none;
+}
+body header nav .links ul li a {
+  text-decoration: none;
+  color: #cdcde4;
+}
+body header nav .links ul li a:hover {
+  color: white;
+  transition-duration: 0.5s;
+}
+body .accueil {
+  padding-top: 4vh;
+  width: 95%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+body .accueil .description {
+  width: 40%;
+  text-align: justify;
+}
+body .accueil .profile {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+body .accueil .profile .image-pdp {
+  width: 100%;
+  height: auto;
+  margin-bottom: 3vh;
+}
+body .accueil .profile .image-pdp img {
+  width: 70%;
+  border-radius: 20px;
+}
+body .accueil .profile .logoSkills {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+body .accueil .profile .image-skill {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center; /* Centrer l'image horizontalement */
+  position: relative; /* Nécessaire pour positionner le cercle */
+}
+body .accueil .profile .image-skill img {
+  width: 30%;
+  position: relative;
+  z-index: 1; /* Assure que l'image est au-dessus du cercle */
+}
+body .accueil .profile .image-skill::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  height: 10vh;
+  transform: translate(-50%, -50%);
+  border-radius: 50%; /* Forme le cercle */
+  border: 2px solid cyan; /* Couleur et taille de la bordure */
+  z-index: 0; /* Place le cercle derrière l'image */
+}
+body .mySkills {
+  padding-top: 4vh;
+}
+body .mySkills h2 {
+  text-align: center;
+}
+body .mySkills .allSkills {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+body .mySkills .allSkills .oneSkill ul {
+  list-style-type: none;
+  padding: 0;
+}
+body .mySkills .allSkills .oneSkill li {
+  margin-bottom: 20px;
+}
+body .mySkills .allSkills .oneSkill .progress-bar {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 10px;
+  margin-top: 5px;
+}
+body .mySkills .allSkills .oneSkill .progress {
+  height: 100%;
+  background-color: blue;
+  border-radius: 5px;
+}/*# sourceMappingURL=style.css.map */

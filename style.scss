@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  background-color: #31314a;
+  color: #cdcde4;
+  header {
+    background-color: #1e1e2e;
+    nav {
+      width: 90%;
+      margin: auto;
+      display: flex;
+
+      img {
+        width: 30%;
+        margin: auto;
+      }
+
+      .links {
+        width: 40%;
+        margin: auto;
+
+        ul {
+          display: flex;
+          justify-content: space-between;
+
+          li {
+            list-style-type: none;
+
+            a {
+              text-decoration: none;
+              color: #cdcde4;
+            }
+
+            a:hover {
+              color: white;
+              transition-duration: 0.5s;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .accueil {
+    padding-top: 4vh;
+    width: 95%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+
+    .description {
+      width: 40%;
+      text-align: justify;
+    }
+
+    .profile {
+      width: 60%;
+      margin: auto;
+      text-align: center;
+
+      .image-pdp {
+        width: 100%;
+        height: auto;
+        margin-bottom: 3vh;
+
+        img {
+          width: 70%;
+          border-radius: 20px;
+        }
+      }
+
+      .logoSkills {
+        width: 85%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .image-skill {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center; /* Centrer l'image horizontalement */
+        position: relative; /* Nécessaire pour positionner le cercle */
+      }
+
+      .image-skill img {
+        width: 30%;
+        position: relative;
+        z-index: 1; /* Assure que l'image est au-dessus du cercle */
+      }
+
+      .image-skill::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40%;
+        height: 10vh;
+        transform: translate(-50%, -50%);
+        border-radius: 50%; /* Forme le cercle */
+        border: 2px solid cyan; /* Couleur et taille de la bordure */
+        z-index: 0; /* Place le cercle derrière l'image */
+      }
+    }
+  }
+
+  .mySkills {
+    padding-top: 4vh;
+    h2 {
+      text-align: center;
+    }
+
+    .allSkills {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+
+      .oneSkill {
+        ul {
+          list-style-type: none;
+          padding: 0;
+        }
+
+        li {
+          margin-bottom: 20px;
+        }
+
+        .progress-bar {
+          width: 100%;
+          background-color: #e0e0e0;
+          border-radius: 5px;
+          overflow: hidden;
+          height: 10px;
+          margin-top: 5px;
+        }
+
+        .progress {
+          height: 100%;
+          background-color: blue;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
