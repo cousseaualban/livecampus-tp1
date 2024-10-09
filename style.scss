@@ -1,146 +1,342 @@
-body {
+* {
   margin: 0;
-  background-color: #31314a;
-  color: #cdcde4;
-  header {
-    background-color: #1e1e2e;
-    nav {
-      width: 90%;
-      margin: auto;
-      display: flex;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
 
-      img {
-        width: 30%;
-        margin: auto;
-      }
+h3 {
+  font-size: 2.6em;
+}
 
-      .links {
-        width: 40%;
-        margin: auto;
+span {
+  color: orangered;
+}
 
-        ul {
-          display: flex;
-          justify-content: space-between;
+.btn-1 {
+  padding: 15px 28px;
+  background-color: black;
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
 
-          li {
-            list-style-type: none;
+.btn-1:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
 
-            a {
-              text-decoration: none;
-              color: #cdcde4;
-            }
+.btn-2 {
+  padding: 15px 28px;
+  background-color: orangered;
+  color: white;
+  border: 2px solid black;
+  border-radius: 8px;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
 
-            a:hover {
-              color: white;
-              transition-duration: 0.5s;
-            }
-          }
-        }
-      }
-    }
+.btn-2:hover {
+  background-color: white;
+  color: orangered;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 35px 12%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+
+  .logo {
+    font-size: 1.5em;
+    color: white;
+    font-weight: 600;
+    transition: 0.3 ease;
+    text-decoration: none;
   }
 
-  .accueil {
-    padding-top: 4vh;
-    width: 95%;
-    margin: auto;
-    display: flex;
-    align-items: center;
+  .logo:hover {
+    color: orangered;
+    text-shadow: 0 0 25px orangered, 0 0 50px orangered;
+    transform: scale(1.1);
+  }
 
-    .description {
-      width: 40%;
+  .navbar a {
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    margin: 0 20px;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+    text-decoration: none;
+  }
+
+  .navbar a:hover,
+  .navbar a.active {
+    color: orangered;
+    border-bottom: 3px;
+  }
+
+  .contact {
+    padding: 10px 28px;
+    background-color: white;
+    color: black;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    text-decoration: none;
+  }
+
+  .contact:hover {
+    background-color: orangered;
+    box-shadow: 0 0 25px orangered;
+    color: white;
+  }
+}
+
+.home {
+  width: 100%;
+  min-height: 100vh;
+  background: rgb(241, 241, 241);
+  display: flex;
+  align-items: center;
+  gap: 7em;
+  padding: 30px 12% 0;
+
+  .home-content {
+    max-width: 800px;
+
+    h1 {
+      font-size: 3.8em;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 1.1em;
       text-align: justify;
+      margin: 25px 0 30px;
     }
 
-    .profile {
-      width: 60%;
-      margin: auto;
-      text-align: center;
-
-      .image-pdp {
-        width: 100%;
-        height: auto;
-        margin-bottom: 3vh;
-
-        img {
-          width: 70%;
-          border-radius: 20px;
-        }
-      }
-
-      .logoSkills {
-        width: 85%;
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .image-skill {
-        width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: center; /* Centrer l'image horizontalement */
-        position: relative; /* Nécessaire pour positionner le cercle */
-      }
-
-      .image-skill img {
-        width: 30%;
-        position: relative;
-        z-index: 1; /* Assure que l'image est au-dessus du cercle */
-      }
-
-      .image-skill::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 40%;
-        height: 10vh;
-        transform: translate(-50%, -50%);
-        border-radius: 50%; /* Forme le cercle */
-        border: 2px solid cyan; /* Couleur et taille de la bordure */
-        z-index: 0; /* Place le cercle derrière l'image */
-      }
-    }
-  }
-
-  .mySkills {
-    padding-top: 4vh;
-    h2 {
-      text-align: center;
-    }
-
-    .allSkills {
-      width: 90%;
-      margin: auto;
+    .btn-box {
+      width: 500px;
       display: flex;
-      justify-content: space-between;
+      gap: 2em;
+    }
+  }
 
-      .oneSkill {
-        ul {
-          list-style-type: none;
-          padding: 0;
-        }
+  .img-box {
+    width: 550px;
+    height: 550px; /* Ajouter une hauteur pour garder la boîte carrée */
+    overflow: hidden; /* Masquer les coins qui débordent */
+  }
 
-        li {
-          margin-bottom: 20px;
-        }
+  .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
 
-        .progress-bar {
-          width: 100%;
-          background-color: #e0e0e0;
-          border-radius: 5px;
-          overflow: hidden;
-          height: 10px;
-          margin-top: 5px;
-        }
+.skills {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12% 8%;
+  gap: 10em;
+  background: black;
 
-        .progress {
-          height: 100%;
-          background-color: blue;
-          border-radius: 5px;
-        }
+  .skills-img {
+    position: relative;
+    width: 45%;
+    height: 550px;
+    overflow: hidden;
+    box-shadow: 0 0 25px orangered, 0 0 50px orangered;
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  .skills-content {
+    h2 {
+      font-size: 2.6em;
+      color: white;
+      text-align: left;
+    }
+
+    h3 {
+      font-size: 3.8em;
+      color: white;
+    }
+
+    p {
+      color: white;
+      font-size: 1.25em;
+      margin: 2em 0 3em;
+    }
+
+    
+  }
+}
+
+.contact-form {
+  h2 {
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font-size: 2.25em;
+  }
+
+  form {
+    max-width: 50em;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3em;
+
+    .input-box {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .input-box input,
+    textarea {
+      width: 100%;
+      padding: 1.5em;
+      font-size: 1.1em;
+      color: black;
+      background: rgb(241, 241, 241);
+      border-radius: 0.8rem;
+      margin: 1rem 0;
+      resize: none;
+    }
+  }
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0;
+  background-color: black;
+
+  .social {
+    text-align: center;
+    padding-bottom: 1.5em;
+    color: white;
+
+    a {
+      font-size: 1.5em;
+      color: white;
+      border: 2px solid orangered;
+      width: 40px;
+      height: 40px;
+      line-height: 38px;
+      display: inline-block;
+      text-align: center;
+      border-radius: 50%;
+      margin: 0 8px;
+      box-shadow: inset 0 0 10px orangered, 0 0 10px orangered;
+      transition: 0.3s ease;
+    }
+
+    a:hover {
+      transform: scale(1.2) translateY(-10px);
+      color: orangered;
+      border: 2px solid orangered;
+    }
+  }
+
+  .list {
+    margin-top: 0;
+    padding: 0;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      padding: 0 15px;
+
+      a {
+        color: white;
+        border-bottom: 3px solid transparent;
+        transition: 0.3s ease;
+      }
+
+      a:hover {
+        border-bottom: 3px solid orangered;
       }
     }
   }
+
+  .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.75em;
+    color: white;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: orangered;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 50px;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 2vh;
+  right: 2vh;
+  display: none;
+  width: 40px;
+  height: 4vh;
+  background-color: orangered;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 4vh;
+  color: #fff;
+}
+
+.scroll-to-top:hover {
+  transition-duration: 0.4s;
+  background-color: black;
+}
+
+.scroll-to-top.show {
+  display: block;
 }
