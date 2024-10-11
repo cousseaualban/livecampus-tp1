@@ -2,7 +2,6 @@ const API_KEY = "889bdac92c774d818f284432241110";
 
 async function fetchWeather() {
   try {
-    // Utilisation des template literals pour intégrer la clé API dans l'URL
     let response = await fetch(
       `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=Aizenay&aqi=no`
     );
