@@ -5,26 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" type="text/css" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Page Web statique HTML / CSS</title>
   </head>
   <body>
     <!-- Section Header -->
-    <header class="header">
+    <header class="header" id="header">
       <a href="#" class="logo"><span>Alban </span>COUSSEAU</a>
-      <nav class="navbar">
-        <a href="#" class="active">Présentation</a>
-        <a href="#">A propos de moi</a>
-        <a href="#">Compétences</a>
-        <a href="#">Expériences</a>
+
+      <nav class="navbar" id="navbar">
+        <a href="#home" class="active">Présentation</a>
+        <a href="#competences">Compétences</a>
+        <a href="#xp">Expériences</a>
+        <a href="#contact" class="contact">Contact</a>
+
+        <div class="weather">
+          <img
+            src="#"
+            id="weather-icon"
+            alt="Icône météo"
+            style="display: none; width: 64px; height: 64px"
+          />
+          <span id="weather-info">Chargement de la météo...</span>
+        </div>
       </nav>
-      <a href="#" class="contact">Contact</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()" aria-label="Cliquez sur le bouton pour afficher les différentes pages du site">
+        <i class="fa fa-bars"></i>        </a>
     </header>
+
     <!-- Fin section Header -->
 
     <!-- Section Accueil -->
-    <section class="home">
+    <section class="home" id="home">
       <div class="home-content">
         <h3>Hello there</h3>
         <h1>
@@ -33,8 +55,8 @@
         <p>
           Suite à l'acquisition de mon BTS SIO option SLAM en 2022 et du Titre
           de Développeur Web et Web Mobile en 2024, je souhaite poursuivre mes
-          études afin de devenir Concepteur Développeur d'Applications. Fort de
-          ces expériences, j’ai pu développer des compétences solides en
+          études afin de devenir Concepteur Développeur d'Applications. <br />
+          Fort de ces expériences, j’ai pu développer des compétences solides en
           programmation, analyse des besoins et gestion de projets, tout en
           maîtrisant divers langages comme PHP, JavaScript, et SQL. Mon objectif
           est d'approfondir mes connaissances en architecture logicielle,
@@ -48,48 +70,264 @@
         </div>
       </div>
       <div class="img-box">
-        <img src="./pdp.png" alt="Photo de profil" />
+        <img src="./assets/pdp.png" alt="Photo de profil" />
       </div>
     </section>
     <!-- Fin Section Accueil -->
 
-    <section class="skills">
-      <div class="skills-img">
-        <img src="./anime.jpg" alt="Photo de profil" />
-      </div>
-
+    <!-- Section Mes Compétences & Expériences -->
+    <section class="skills" id="competences">
       <div class="skills-content">
-        <h2 class="heading">Mon <span>expérience</span></h2>
-        <h3>Développeur <span>Informatique</span></h3>
+        <div class="skills-img">
+          <img src="./assets/anime.jpg" alt="Photo section Mes compétences" />
+        </div>
+        <div class="skills-title">
+          <h2>Mes <span>Compétences</span></h2>
+          <h3><span>Développement </span>Informatique</h3>
+          <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="3"
+                aria-label="Slide 4"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="oneSkill-container">
+                  <h5>Développement <span>Frontend</span></h5>
+                  <h6>HTML</h6>
+                  <div class="progress-bar">
+                    <span data-width="100%"></span>
+                  </div>
+                </div>
+                <div class="oneSkill-container">
+                  <h6>CSS</h6>
+                  <div class="progress-bar">
+                    <span data-width="100%"></span>
+                  </div>
+                </div>
+                <div class="oneSkill-container">
+                  <h6>Bootstrap</h6>
+                  <div class="progress-bar">
+                    <span data-width="70%"></span>
+                  </div>
+                </div>
+                <div class="oneSkill-container">
+                  <h6>JavaScript</h6>
+                  <div class="progress-bar">
+                    <span data-width="60%"></span>
+                  </div>
+                </div>
               </div>
+              <div class="carousel-item">
+                <div class="oneSkill-container">
+                  <h5>Développement <span>Backend</span></h5>
+                  <h6>PHP Laravel</h6>
+                  <div class="progress-bar">
+                    <span data-width="90%"></span>
+                  </div>
+                </div>
+                <div class="oneSkill-container">
+                  <h6>SQL</h6>
+                  <div class="progress-bar">
+                    <span data-width="90%"></span>
+                  </div>
+                </div>
+                <div class="oneSkill-container">
+                  <h6>C#</h6>
+                  <div class="progress-bar">
+                    <span data-width="50%"></span>
+                  </div>
+                </div>
+                <div class="oneSkill-container">
+                  <h6>Python</h6>
+                  <div class="progress-bar">
+                    <span data-width="40%"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="oneSkill-container">
+                  <h5>Soft <span>Skills</span></h5>
+                  <h6>Autonome</h6>
+                  <div class="progress-bar">
+                    <span data-width="100%"></span>
+                  </div>
+                </div>
+                <div class="oneSkill-container">
+                  <h6>Organisé et réactif</h6>
+                  <div class="progress-bar">
+                    <span data-width="90%"></span>
+                  </div>
+                </div>
+                <div class="oneSkill-container">
+                  <h6>Travail d'équipe</h6>
+                  <div class="progress-bar">
+                    <span data-width="90%"></span>
+                  </div>
+                </div>
+                <div class="oneSkill-container">
+                  <h6>Persévérant</h6>
+                  <div class="progress-bar">
+                    <span data-width="80%"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="oneSkill-container">
+                  <h5>Compétences <span>Annexes</span></h5>
+                  <h6>Anglais</h6>
+                  <div class="progress-bar">
+                    <span data-width="90%"></span>
+                  </div>
+                </div>
+                <div class="oneSkill-container">
+                  <h6>Github</h6>
+                  <div class="progress-bar">
+                    <span data-width="90%"></span>
+                  </div>
+                </div>
+                <div class="oneSkill-container">
+                  <h6>Maquettage</h6>
+                  <div class="progress-bar">
+                    <span data-width="80%"></span>
+                  </div>
+                </div>
+                <div class="oneSkill-container">
+                  <h6>MCD / MLD</h6>
+                  <div class="progress-bar">
+                    <span data-width="80%"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Fin partie mes compétences-->
+
+      <!-- Mes expériences professionnelles -->
+      <div class="experience">
+        <h2 id="#xp">Expérience <span>Professionnelle</span></h2>
+        <div class="allExperiences">
+          <div class="wrapper">
+            <div class="img-experience">
+              <img
+                src="./assets/photoExperience1.png"
+                alt="Photo première expérience"
+              />
+              <div class="content">
+                <h1>Création d'un <span>site web</span></h1>
+                <div class="icons">
+                  <a href="#"><i class="bx bxl-php"></i></a>
+                  <a href="#"><i class="bx bxs-data"></i></a>
+                  <a href="#"><i class="bx bxl-html5"></i></a>
+                  <a href="#"><i class="bx bxl-sass"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper">
+            <div class="img-experience">
+              <img
+                src="./assets/photoExperience2.png"
+                alt="Photo deuxième expérience"
+              />
+              <div class="content">
+                <h1><span>Refonte</span> d'une interface application</h1>
+                <div class="icons">
+                  <a href="#"><i class="bx bxl-html5"></i></a>
+                  <a href="#"><i class="bx bxl-sass"></i></a>
+                  <a href="#"><i class="bx bxl-javascript"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper">
+            <div class="img-experience">
+              <img
+                src="./assets/photoExperience3.png"
+                alt="Photo troisième expérience"
+              />
+              <div class="content">
+                <h1>Application <span>gestion de clients</span></h1>
+                <div class="icons">
+                  <a href="#"><i class="bx bxl-bootstrap"></i></a>
+                  <a href="#"><i class="bx bxl-php"></i></a>
+                  <a href="#"><i class="bx bxs-data"></i></a>
+                  <a href="#"><i class="bx bxl-javascript"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+    <!-- Fin partie mon expérience professionnelle-->
 
     <!-- Section / Formulaire de contact -->
-    <section class="contact-form">
+    <section class="contact-form" id="contact">
       <h2 class="contact-me">Contactez <span>moi</span></h2>
-
       <form action="#">
         <div class="input-box">
           <input type="text" placeholder="Prénom" />
           <input type="email" placeholder="Adresse mail" />
         </div>
-
         <div class="input-box">
           <input type="number" placeholder="Numéro de téléphone" />
           <input type="text" placeholder="Objet" />
         </div>
-
-        <textarea
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-          placeholder="Votre message"
-        ></textarea>
+        <textarea cols="30" rows="10" placeholder="Votre message"></textarea>
         <input type="submit" value="Envoyer votre message" class="btn-1" />
       </form>
     </section>
-
+    <!-- Bas de page -->
     <footer class="footer">
       <div class="social">
         <a href="#"><i class="bx bxl-facebook"></i></a>
@@ -97,7 +335,6 @@
         <a href="#"><i class="bx bxl-github"></i></a>
         <a href="#"><i class="bx bxl-instagram"></i></a>
       </div>
-
       <ul class="list">
         <li>
           <a href="#">Présentation</a>
@@ -115,39 +352,18 @@
           <a href="#">Contact</a>
         </li>
       </ul>
-
       <p class="copyright">© 2024 Alban COUSSEAU | All Rights Reserved</p>
     </footer>
-    <div>
-      <!-- ToTopButton.blade.php -->
-      <a href="#" class="scroll-to-top"><i class="bx bx-up-arrow-alt"></i></a>
-    </div>
+    <!--Bouton s'affichant en bas à droite pour remonter en haut de page -->
+    <a href="#" class="scroll-to-top"><i class="bx bx-up-arrow-alt"></i></a>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/toTop.js"></script>
+    <script src="./js/progressBar.js"></script>
+    <script src="./js/fetchWeather.js"></script>
+    <script src="./js/burgerMenu.js"></script>
   </body>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      window.addEventListener("scroll", function () {
-        var scrollPosition =
-          window.pageYOffset || document.documentElement.scrollTop;
-        var scrollToShowButton = 100;
-
-        if (scrollPosition > scrollToShowButton) {
-          document.querySelector(".scroll-to-top").classList.add("show");
-        } else {
-          document.querySelector(".scroll-to-top").classList.remove("show");
-        }
-      });
-
-      document
-        .querySelector(".scroll-to-top")
-        .addEventListener("click", function (e) {
-          e.preventDefault();
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
-        });
-    });
-  </script>
 </html>

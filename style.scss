@@ -1,3 +1,5 @@
+@import "./variables";
+
 * {
   margin: 0;
   padding: 0;
@@ -9,16 +11,21 @@
 
 h3 {
   font-size: 2.6em;
+
+  // Responsive petit écran
+  @media (min-width: 370px) {
+    font-size: 1.5em;
+  }
 }
 
 span {
-  color: orangered;
+  color: $primaryColor;
 }
 
 .btn-1 {
   padding: 15px 28px;
-  background-color: black;
-  color: white;
+  background-color: $backgroundColor;
+  color: $secondaryColor;
   border: 2px solid transparent;
   border-radius: 8px;
   font-size: 1.1em;
@@ -29,16 +36,16 @@ span {
 }
 
 .btn-1:hover {
-  background-color: white;
-  color: black;
-  border: 2px solid black;
+  background-color: $secondaryColor;
+  color: $backgroundColor;
+  border: 2px solid $backgroundColor;
 }
 
 .btn-2 {
   padding: 15px 28px;
-  background-color: orangered;
-  color: white;
-  border: 2px solid black;
+  background-color: $primaryColor;
+  color: $secondaryColor;
+  border: 2px solid $backgroundColor;
   border-radius: 8px;
   font-size: 1.1em;
   letter-spacing: 1px;
@@ -48,8 +55,8 @@ span {
 }
 
 .btn-2:hover {
-  background-color: white;
-  color: orangered;
+  background-color: $secondaryColor;
+  color: $primaryColor;
 }
 
 .header {
@@ -65,53 +72,115 @@ span {
   align-items: center;
   z-index: 100;
 
+  // Responsive petit écran
+  @media (min-width: 370px) and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // Responsive moyen écran
+  @media (min-width: 769px) and (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+  }
+
   .logo {
     font-size: 1.5em;
-    color: white;
+    color: $secondaryColor;
     font-weight: 600;
     transition: 0.3 ease;
     text-decoration: none;
   }
 
   .logo:hover {
-    color: orangered;
-    text-shadow: 0 0 25px orangered, 0 0 50px orangered;
+    color: $primaryColor;
+    text-shadow: 0 0 25px $primaryColor, 0 0 50px $primaryColor;
     transform: scale(1.1);
   }
 
-  .navbar a {
-    font-size: 18px;
-    color: white;
-    font-weight: 500;
-    margin: 0 20px;
-    border-bottom: 3px solid transparent;
-    transition: 0.3s ease;
-    text-decoration: none;
-  }
+  .navbar {
+    position: relative;
+    // Responsive petit écran
+    @media (min-width: 370px) and (max-width: 768px) {
+      display: none;
+      text-align: center;
+    }
 
-  .navbar a:hover,
-  .navbar a.active {
-    color: orangered;
-    border-bottom: 3px;
-  }
+            // Responsive moyens écran
+            @media (min-width: 768px) and (max-width: 1024px) {
+              display: flex;
+              flex-direction: column;
+            }
 
-  .contact {
-    padding: 10px 28px;
-    background-color: white;
-    color: black;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    font-size: 18px;
-    letter-spacing: 1px;
-    font-weight: 600;
-    transition: 0.3s ease;
-    text-decoration: none;
-  }
+    a {
+      font-size: 18px;
+      color: $secondaryColor;
+      font-weight: 500;
+      margin: 0 20px;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s ease;
+      text-decoration: none;
 
-  .contact:hover {
-    background-color: orangered;
-    box-shadow: 0 0 25px orangered;
-    color: white;
+      // Responsive petit écran
+      @media (min-width: 370px) and (max-width: 768px) {
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        display: block;
+      }
+
+              // Responsive moyens écran
+              @media (min-width: 768px) and (max-width: 1024px) {
+                margin-top: 2vh;
+              }
+    }
+
+    a:hover,
+    a.active {
+      color: $primaryColor;
+      border-bottom: 3px;
+    }
+
+    .contact {
+      padding: 10px 28px;
+      background-color: $backgroundColor;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      font-size: 18px;
+      letter-spacing: 1px;
+      font-weight: 600;
+      transition: 0.3s ease;
+      text-decoration: none;
+    }
+
+    .contact:hover {
+      background-color: $primaryColor;
+      box-shadow: 0 0 25px $primaryColor;
+      color: $secondaryColor;
+    }
+
+    .weather {
+      font-size: 1.5em;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-left: 20px;
+    }
+  }
+  .icon {
+    width: 5%;
+    text-align: center;
+    display: none;
+    color: $secondaryColor;
+    background-color: $backgroundColor;
+
+    // Responsive petit écran
+    @media (min-width: 370px) and (max-width: 768px) {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 9999;
+    }
   }
 }
 
@@ -124,12 +193,34 @@ span {
   gap: 7em;
   padding: 30px 12% 0;
 
+  // Responsive petit écran
+  @media (min-width: 370px) and (max-width: 1024px) {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-bottom: 3vh;
+  }
+
   .home-content {
     max-width: 800px;
+
+    // Responsive petit écran
+    @media (min-width: 370px) and (max-width: 768px) {
+      width: 380px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     h1 {
       font-size: 3.8em;
       line-height: 1.2;
+
+      // Responsive petit écran
+      @media (min-width: 370px) and (max-width: 768px) {
+        font-size: 2em;
+        text-align: center;
+      }
     }
 
     p {
@@ -142,13 +233,34 @@ span {
       width: 500px;
       display: flex;
       gap: 2em;
+
+      // Responsive petit écran
+      @media (min-width: 370px) and (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+      }
     }
   }
 
   .img-box {
     width: 550px;
-    height: 550px; /* Ajouter une hauteur pour garder la boîte carrée */
-    overflow: hidden; /* Masquer les coins qui débordent */
+    height: 550px;
+    overflow: hidden;
+
+    // Responsive petit écran
+    @media (min-width: 370px) and (max-width: 768px) {
+      margin-top: 10vh;
+      width: 300px;
+      height: 300px;
+    }
+
+    // Responsive moyens écran
+    @media (min-width: 768px) and (max-width: 1024px) {
+      margin-top: 45vh;
+      width: 400px;
+      height: 400px;
+    }
   }
 
   .img-box img {
@@ -162,46 +274,278 @@ span {
 .skills {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 12% 8%;
+  padding: 10% 8%;
   gap: 10em;
-  background: black;
+  background: $backgroundColor;
 
-  .skills-img {
-    position: relative;
-    width: 45%;
-    height: 550px;
-    overflow: hidden;
-    box-shadow: 0 0 25px orangered, 0 0 50px orangered;
-    border-radius: 50%;
+  .skills-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    // Responsive petit écran
+    @media (min-width: 370px) and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    // Responsive moyens écran
+    @media (min-width: 768px) and (max-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .skills-img {
+      position: relative;
+      width: 45%;
+      height: 550px;
+      overflow: hidden;
+      box-shadow: 0 0 25px $primaryColor, 0 0 50px $primaryColor;
       border-radius: 50%;
+
+      // Responsive petit écran
+      @media (min-width: 370px) and (max-width: 768px) {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 3vh;
+      }
+
+      // Responsive moyens écran
+      @media (min-width: 768px) and (max-width: 1024px) {
+        margin-bottom: 3vh;
+        width: 400px;
+        height: 400px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+
+    .skills-title {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      h2 {
+        font-size: 2.6em;
+        color: $secondaryColor;
+        text-align: left;
+        // Responsive petit écran
+        @media (min-width: 370px) and (max-width: 768px) {
+          font-size: 2em;
+        }
+      }
+
+      h3 {
+        font-size: 3.5em;
+        color: $secondaryColor;
+        padding-bottom: 10vh;
+        // Responsive petit écran
+        @media (min-width: 370px) and (max-width: 768px) {
+          font-size: 1.5em;
+          text-align: center;
+          padding-bottom: 5vh;
+        }
+
+        // Responsive moyens écran
+        @media (min-width: 768px) and (max-width: 1024px) {
+          text-align: center;
+          font-size: 2.5em;
+        }
+      }
+
+      .oneSkill-container {
+        margin-bottom: 2vh;
+
+        // Responsive petit écran
+        @media (min-width: 370px) and (max-width: 768px) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 3vh;
+        }
+
+        h5 {
+          color: $secondaryColor;
+          font-size: 2em;
+          padding-bottom: 3vh;
+          text-align: center;
+          // Responsive petit écran
+          @media (min-width: 370px) and (max-width: 768px) {
+            font-size: 1.5em;
+          }
+        }
+
+        h6 {
+          color: $secondaryColor;
+          font-size: 1.5em;
+
+          // Responsive petit écran
+          @media (min-width: 370px) and (max-width: 768px) {
+            font-size: 1em;
+          }
+        }
+
+        .progress-bar {
+          position: relative;
+          width: 500px;
+          height: 30px;
+          border-radius: 30px;
+          background-color: $primaryColor;
+          box-shadow: 3px 4px 5px 0px rgba(204 185 185 / 0.75);
+
+          // Responsive petit écran
+          @media (min-width: 370px) and (max-width: 768px) {
+            width: 300px;
+          }
+
+          span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            color: $secondaryColor;
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 1.7;
+            text-align: center;
+            border-radius: 30px;
+            background: linear-gradient(
+              90deg,
+              rgba(76, 175, 80, 1) 50%,
+              rgba(50, 222, 132, 1) 100%
+            );
+            transition: width 1.5s linear;
+          }
+        }
+      }
     }
   }
 
-  .skills-content {
+  .experience {
+    display: flex;
+    flex-direction: column;
+
     h2 {
       font-size: 2.6em;
-      color: white;
-      text-align: left;
+      color: $secondaryColor;
+      text-align: center;
+      padding-bottom: 3vh;
     }
 
-    h3 {
-      font-size: 3.8em;
-      color: white;
-    }
+    .allExperiences {
+      display: grid;
+      grid-template-columns: 33% 33% 33%;
 
-    p {
-      color: white;
-      font-size: 1.25em;
-      margin: 2em 0 3em;
-    }
+      // Responsive petit écran
+      @media (min-width: 370px) and (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+      }
 
-    
+      // Responsive moyens écran
+      @media (min-width: 768px) and (max-width: 1024px) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .wrapper {
+        width: 35%;
+        height: 40vh;
+        padding-right: 5vh;
+
+        // Responsive petit écran
+        @media (min-width: 370px) and (max-width: 768px) {
+          width: 90%;
+          margin: auto;
+        }
+
+        .img-experience {
+          width: 500px;
+          position: relative;
+
+          // Responsive petit écran
+          @media (min-width: 370px) and (max-width: 768px) {
+            width: 350px;
+          }
+
+          img {
+            width: 100%;
+            display: block;
+            margin: auto;
+          }
+
+          .content {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: 0.6s;
+
+            h1 {
+              font-size: 2em;
+              color: $secondaryColor;
+              margin-bottom: 15px;
+
+              // Responsive petit écran
+              @media (min-width: 370px) and (max-width: 768px) {
+                font-size: 1.5em;
+                text-align: center;
+              }
+            }
+
+            .icons {
+              display: flex;
+              justify-content: space-between;
+
+              a {
+                font-size: 1.5em;
+                color: $secondaryColor;
+                border: 2px solid $primaryColor;
+                width: 40px;
+                height: 40px;
+                line-height: 38px;
+                display: inline-block;
+                text-align: center;
+                border-radius: 50%;
+                margin: 0 8px;
+                box-shadow: inset 0 0 10px $primaryColor, 0 0 10px $primaryColor;
+                transition: 0.3s ease;
+              }
+            }
+          }
+
+          .content:hover {
+            opacity: 1;
+          }
+
+          .content > * {
+            transform: translateY(25px);
+            transition: transform 0.6s;
+          }
+
+          .content:hover > * {
+            transform: translateY(0px);
+          }
+        }
+      }
+    }
   }
 }
 
@@ -219,6 +563,16 @@ span {
     text-align: center;
     margin-bottom: 3em;
 
+    // Responsive petit écran
+    @media (min-width: 370px) and (max-width: 768px) {
+      width: 23em;
+    }
+
+    // Responsive moyens écran
+    @media (min-width: 768px) and (max-width: 1024px) {
+      width: 45em;
+    }
+
     .input-box {
       display: flex;
       justify-content: center;
@@ -230,7 +584,7 @@ span {
       width: 100%;
       padding: 1.5em;
       font-size: 1.1em;
-      color: black;
+      color: $backgroundColor;
       background: rgb(241, 241, 241);
       border-radius: 0.8rem;
       margin: 1rem 0;
@@ -244,17 +598,17 @@ span {
   bottom: 0;
   width: 100%;
   padding: 40px 0;
-  background-color: black;
+  background-color: $backgroundColor;
 
   .social {
     text-align: center;
     padding-bottom: 1.5em;
-    color: white;
+    color: $secondaryColor;
 
     a {
       font-size: 1.5em;
-      color: white;
-      border: 2px solid orangered;
+      color: $secondaryColor;
+      border: 2px solid $primaryColor;
       width: 40px;
       height: 40px;
       line-height: 38px;
@@ -262,14 +616,14 @@ span {
       text-align: center;
       border-radius: 50%;
       margin: 0 8px;
-      box-shadow: inset 0 0 10px orangered, 0 0 10px orangered;
+      box-shadow: inset 0 0 10px $primaryColor, 0 0 10px $primaryColor;
       transition: 0.3s ease;
     }
 
     a:hover {
       transform: scale(1.2) translateY(-10px);
-      color: orangered;
-      border: 2px solid orangered;
+      color: $primaryColor;
+      border: 2px solid $primaryColor;
     }
   }
 
@@ -281,18 +635,31 @@ span {
     margin-bottom: 0;
     text-align: center;
 
+    // Responsive petit écran
+    @media (min-width: 370px) and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     li {
       display: inline-block;
       padding: 0 15px;
 
+      // Responsive petit écran
+      @media (min-width: 370px) and (max-width: 768px) {
+        margin-bottom: 3vh;
+      }
+
       a {
-        color: white;
+        color: $secondaryColor;
         border-bottom: 3px solid transparent;
         transition: 0.3s ease;
+        text-decoration: none;
       }
 
       a:hover {
-        border-bottom: 3px solid orangered;
+        border-bottom: 3px solid $primaryColor;
       }
     }
   }
@@ -301,7 +668,7 @@ span {
     margin-top: 15px;
     text-align: center;
     font-size: 0.75em;
-    color: white;
+    color: $secondaryColor;
   }
 }
 
@@ -310,7 +677,7 @@ span {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: orangered;
+  background-color: $primaryColor;
 }
 
 ::-webkit-scrollbar-track {
@@ -325,7 +692,7 @@ span {
   display: none;
   width: 40px;
   height: 4vh;
-  background-color: orangered;
+  background-color: $primaryColor;
   border-radius: 20px;
   text-align: center;
   line-height: 4vh;
@@ -334,7 +701,7 @@ span {
 
 .scroll-to-top:hover {
   transition-duration: 0.4s;
-  background-color: black;
+  background-color: $backgroundColor;
 }
 
 .scroll-to-top.show {
