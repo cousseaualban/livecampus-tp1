@@ -193,7 +193,7 @@ span {
   gap: 7em;
   padding: 30px 12% 0;
 
-  // Responsive petit écran
+  // Responsive petit écran et tablette
   @media (min-width: 370px) and (max-width: 1024px) {
     display: flex;
     flex-direction: column-reverse;

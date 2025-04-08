@@ -1,8 +1,8 @@
-function myFunction() {
-  var x = document.getElementById("navbar");
-  if (x.style.display === "block") {
-    x.style.display = "none";
+function burgerMenu() {
+  var fetchNav = document.getElementById("navbar");
+  if (fetchNav.style.display === "block") {
+    fetchNav.style.display = "none";
   } else {
-    x.style.display = "block";
+    fetchNav.style.display = "block";
   }
 }
